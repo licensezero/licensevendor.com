@@ -1,0 +1,6 @@
+{
+  "$id": "https://licensevendor.com/1.0.0-pre/schemas/url.json",
+  "type": "string",
+  "format": "url",
+  "pattern": "^https://"
+}

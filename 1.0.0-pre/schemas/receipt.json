@@ -1,0 +1,161 @@
+{
+  "$id": "https://licensevendor.com/1.0.0-pre/schemas/receipt.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "publicKey",
+    "signature",
+    "license"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "https://licensevendor.com/1.0.0-pre/schemas/receipt.json"
+    },
+    "publicKey": {
+      "title": "Ed25519 Public Key",
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "signature": {
+      "title": "Ed25519 Detached Signature",
+      "type": "string",
+      "pattern": "^[0-9a-f]{128}$"
+    },
+    "license": {
+      "type": "object",
+      "required": [
+        "meta",
+        "text"
+      ],
+      "properties": {
+        "meta": {
+          "type": "object",
+          "required": [
+            "api",
+            "effective",
+            "licensor",
+            "licensee"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "api": {
+              "$ref": "https://licensevendor.com/1.0.0-pre/schemas/url.json"
+            },
+            "effective": {
+              "$ref": "https://licensevendor.com/1.0.0-pre/schemas/time.json"
+            },
+            "subscription": {
+              "const": true
+            },
+            "form": {
+              "$ref": "https://licensevendor.com/1.0.0-pre/schemas/url.json"
+            },
+            "order": {
+              "title": "UUIDv4",
+              "type": "string",
+              "format": "uuid"
+            },
+            "licensee": {
+              "type": "object",
+              "required": [
+                "email",
+                "jurisdiction",
+                "name"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "format": "email"
+                },
+                "jurisdiction": {
+                  "$ref": "https://licensevendor.com/1.0.0-pre/schemas/jurisdiction.json"
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 3,
+                  "examples": [
+                    "John Doe"
+                  ]
+                }
+              }
+            },
+            "licensor": {
+              "type": "object",
+              "required": [
+                "email",
+                "jurisdiction",
+                "name",
+                "id"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "format": "email"
+                },
+                "jurisdiction": {
+                  "$ref": "https://licensevendor.com/1.0.0-pre/schemas/jurisdiction.json"
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 3,
+                  "examples": [
+                    "John Doe"
+                  ]
+                },
+                "id": {
+                  "title": "UUIDv4",
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "price": {
+              "$ref": "https://licensevendor.com/1.0.0-pre/schemas/price.json"
+            },
+            "expires": {
+              "$ref": "https://licensevendor.com/1.0.0-pre/schemas/time.json"
+            },
+            "vendor": {
+              "description": "information on the party that sold the license, such as an agent or reseller, if the licensor did not sell the license themself",
+              "type": "object",
+              "required": [
+                "email",
+                "name",
+                "jurisdiction",
+                "url"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "format": "email"
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 3,
+                  "example": [
+                    "Artless Devices LLC"
+                  ]
+                },
+                "jurisdiction": {
+                  "$ref": "https://licensevendor.com/1.0.0-pre/schemas/jurisdiction.json"
+                },
+                "url": {
+                  "$ref": "https://licensevendor.com/1.0.0-pre/schemas/url.json"
+                }
+              }
+            }
+          }
+        },
+        "text": {
+          "title": "license text",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

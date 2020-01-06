@@ -1,0 +1,49 @@
+{
+  "$id": "https://licensevendor.com/1.0.0-pre/schemas/artifact.json",
+  "type": "object",
+  "required": [
+    "schema",
+    "offers"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "https://licensevendor.com/1.0.0-pre/schemas/artifact.json"
+    },
+    "offers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "api"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "UUIDv4 offer identifier",
+            "type": "string",
+            "format": "uuid"
+          },
+          "api": {
+            "title": "licensing API",
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://",
+            "examples": [
+              "https://api.licensezero.com"
+            ]
+          },
+          "public": {
+            "title": "public license identifier",
+            "type": "string",
+            "pattern": "^[A-Za-z0-9-.]+",
+            "examples": [
+              "Parity-7.0.0"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "devDependencies": {
+    "ajv": "^6.10.2",
+    "glob": "^7.1.6",
+    "tape": "^4.12.1"
+  },
+  "scripts": {
+    "test": "tape test/*.test.js"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "https://licensevendor.com/1.0.0-pre/schemas/artifact.json",
+  "offers": [
+    {
+      "id": "36fce1e2-5e96-41fc-8776-4e632b546d96",
+      "api": "https://api.licensezero.com"
+    }
+  ]
+}

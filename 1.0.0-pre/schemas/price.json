@@ -1,0 +1,27 @@
+{
+  "$id": "https://licensevendor.com/1.0.0-pre/schemas/price.json",
+  "type": "object",
+  "required": [
+    "amount",
+    "currency"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "amount": {
+      "title": "purchase price in minor units of currency",
+      "type": "integer",
+      "minimum": 1,
+      "examples": [
+        0,
+        100
+      ]
+    },
+    "currency": {
+      "title": "purchase price currency code",
+      "$ref": "https://licensevendor.com/1.0.0-pre/schemas/currency.json",
+      "examples": [
+        "USD"
+      ]
+    }
+  }
+}

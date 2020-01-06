@@ -1,0 +1,202 @@
+openapi: 3.0.0
+info:
+  title: Licensing Server
+  version: 0.0.0
+paths:
+
+  /offers/{uuid}:
+    summary: Returns information about a license offer.
+    parameters:
+      - name: uuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [url, licensor, pricing]
+              additionalProperties: true
+              properties:
+                url:
+                  type: string
+                  format: uri
+                licensor:
+                  type: string
+                  format: uuid
+                pricing:
+                  type: object
+                  properties:
+                    single:
+                      $ref: https://example.com/schemas/price.json
+                    site:
+                      $ref: https://example.com/schemas/price.json
+                  patternProperties:
+                    ^\d+$:
+                      $ref: https://example.com/schemas/price.json
+      400:
+        description: The specified UUID is not a valid UUID.
+      404:
+        description: An offer with the specified UUID was not found.
+      default:
+        description: Unexpected Error
+
+  /licensors/{uuid}:
+    summary: Returns information about a licensor.
+    parameters:
+      - name: uuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, jurisdiction]
+              properties:
+                name:
+                  type: string
+                  minLenght: 3
+                jurisdiction:
+                  $ref: https://example.com/schemas/iso31662.json
+      400:
+        description: The specified UUID is not a valid UUID.
+      404:
+        description: An offer with the specified UUID was not found.
+      default:
+        description: Unexpected Error
+
+  /order/:
+    post:
+      summary: Initiate an order for one or more paiod licenses.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [offers, licensee]
+              properties:
+                offers:
+                  type: array
+                  items:
+                    type: string
+                    format: uuid
+                licensee:
+                  type: object
+                  required: [email, jurisdiction, name]
+                  additionalProperties: true
+                  properties:
+                    email:
+                      type: string
+                      format: email
+                    jurisdiction:
+                      $ref: https://example.com/schemas/iso31662.json
+                    name:
+                      type: string
+                      minLength: 3
+    responses:
+      303:
+        description: The order is ready to complete.
+        headers:
+          Location:
+            description: The URL for the page to complete the order.
+            schema:
+              type: string
+              format: uri
+      5XX:
+        description: Unexpected Error
+
+  receipts/{uuid}:
+    summary: Returns a receipt.
+    parameters:
+      - name: uuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        content:
+          application/json:
+            schema:
+              $ref: https://example.com/schemas/receipt.json
+      400:
+        description: The specified id is not a valid UUID.
+      404:
+        description: An offer with the specified UUID was not found.
+      default:
+        description: Unexpected Error
+
+  bundles/{uuid}:
+    summary: Returns a bundle of receipts.
+    parameters:
+      - name: uuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: https://example.com/schemas/receipt.json
+      400:
+        description: The specified id is not a valid UUID.
+      404:
+        description: An offer with the specified UUID was not found.
+      default:
+        description: Unexpected Error
+
+  subscriptions/{uuid}:
+    summary: Returns the receipts for a subscription.
+    parameters:
+      - name: uuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: https://example.com/schemas/receipt.json
+      default:
+        description: Unexpected Error
+
+  subscriptions/{uuid}/latest:
+    summary: Returns the latest receipt for a subscription.
+    parameters:
+      - name: uuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      302:
+        headers:
+          Location:
+            description: The URL of the receipt.
+            schema:
+              type: string
+              format: uri
+      default:
+        description: Unexpected Error

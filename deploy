@@ -1,0 +1,3 @@
+#!/bin/sh
+SITE=licensevendor.com
+rsync -a --exclude .git --exclude deploy --delete . $SITE:/var/www/$SITE/

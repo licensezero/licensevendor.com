@@ -1,0 +1,35 @@
+{
+  "schema": "https://licensevendor.com/1.0.0-pre/schemas/receipt.json",
+  "publicKey": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "signature": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "license": {
+    "meta": {
+      "api": "https://api.licensezero.com",
+      "effective": "2018-11-13T20:20:39Z",
+      "form": "https://forms.licensezero.com/private/1.0.0",
+      "order": "2c743a84-09ce-4549-9f0d-19d8f53462bb",
+      "licensee": {
+        "email": "licensee@example.com",
+        "jurisdiction": "US-TX",
+        "name": "Joe Licensee"
+      },
+      "licensor": {
+        "email": "licensor@example.com",
+        "jurisdiction": "US-CA",
+        "name": "Jane Licensor",
+        "id": "59e70a4d-ffee-4e9d-a526-7a9ff9161664"
+      },
+      "price": {
+        "amount": 1000,
+        "currency": "USD"
+      },
+      "vendor": {
+        "email": "support@artlessdevices.com",
+        "name": "Artless Devices LLC",
+        "jurisdiction": "US-CA",
+        "url": "https://artlessdevices.com"
+      }
+    },
+    "text": "Fake license text."
+  }
+}
