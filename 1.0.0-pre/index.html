@@ -5,18 +5,26 @@
     <title>License Vendor Protocol 1.0.0-pre</title>
   </head>
   <body>
-    <h1>License Vendor Protocol 1.0.0-pre</h1>
-    <h2>Files</h2>
-    <ul>
-      <li><a href=cli.txt>CLI usage</a></li>
-      <li><a href=swagger.yml>Swagger Specification</a></li>
-      <li><a href=schemas/receipt.json>Receipt JSON Schema</a></li>
-      <li><a href=schemas/artifact.json>Artifact Metadata JSON Schema</a></li>
-    </ul>
-    <h2>Artifact Metadata</h2>
-    <h3>npm</h3>
-    <p>Place artifact metadata in <code>package.json</code> under the <code>licensevendor</code> key.</p>
-    <h3>Cargo</h3>
-    <p>Place artifact metadata in <code>Cargo.toml</code> under <code>[package.metadata.licensevendor]</code>.</p>
+    <header>
+      <h1>License Vendor Protocol 1.0.0-pre</h1>
+    </header>
+    <main>
+      <section id=files>
+        <h2>Files</h2>
+        <ul>
+          <li><a href=cli.txt>CLI usage</a></li>
+          <li><a href=swagger.yml>Swagger Specification</a></li>
+          <li><a href=schemas/receipt.json>Receipt JSON Schema</a></li>
+          <li><a href=schemas/artifact.json>Artifact Metadata JSON Schema</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2 id=artifact-metadata>Artifact Metadata</h2>
+        <h3>npm</h3>
+        <p>Place artifact metadata in <code>package.json</code> under the <code>licensevendor</code> key.</p>
+        <h3>Cargo</h3>
+        <p>Place artifact metadata in <code>Cargo.toml</code> under <code>[package.metadata.licensevendor]</code>.</p>
+      </section>
+    </main>
   </body>
 </html>
