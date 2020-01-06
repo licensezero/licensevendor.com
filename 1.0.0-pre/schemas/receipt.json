@@ -69,10 +69,9 @@
                   "$ref": "https://licensevendor.com/1.0.0-pre/schemas/jurisdiction.json"
                 },
                 "name": {
-                  "type": "string",
-                  "minLength": 3,
+                  "$ref": "https://licensevendor.com/1.0.0-pre/schemas/name.json",
                   "examples": [
-                    "John Doe"
+                    "Joe Licensee"
                   ]
                 }
               }
@@ -95,10 +94,9 @@
                   "$ref": "https://licensevendor.com/1.0.0-pre/schemas/jurisdiction.json"
                 },
                 "name": {
-                  "type": "string",
-                  "minLength": 3,
+                  "$ref": "https://licensevendor.com/1.0.0-pre/schemas/name.json",
                   "examples": [
-                    "John Doe"
+                    "Joe Licensor"
                   ]
                 },
                 "id": {
@@ -130,8 +128,7 @@
                   "format": "email"
                 },
                 "name": {
-                  "type": "string",
-                  "minLength": 3,
+                  "$ref": "https://licensevendor.com/1.0.0-pre/schemas/name.json",
                   "example": [
                     "Artless Devices LLC"
                   ]
