@@ -24,7 +24,7 @@ tape.test('1.0.0-pre', function (suite) {
     })
   })
 
-  glob.sync('1.0.0-pre/schemas/examples/*.valid.json').forEach(function (file) {
+  glob.sync('1.0.0-pre/examples/*.valid.json').forEach(function (file) {
     suite.test(file, function (test) {
       var basename = path.basename(file, '.json')
       var schemaName = basename.split('-')[0]
@@ -36,7 +36,7 @@ tape.test('1.0.0-pre', function (suite) {
     })
   })
 
-  glob.sync('1.0.0-pre/schemas/examples/*.invalid.json').forEach(function (file) {
+  glob.sync('1.0.0-pre/examples/*.invalid.json').forEach(function (file) {
     suite.test(file, function (test) {
       var basename = path.basename(file, '.json')
       var schemaName = basename.split('-')[0]
