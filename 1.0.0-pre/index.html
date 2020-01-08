@@ -5,40 +5,58 @@
     <title>License Vendor Protocol 1.0.0-pre</title>
   </head>
   <body>
-    <header>
+    <header role=banner>
       <h1>License Vendor Protocol 1.0.0-pre</h1>
     </header>
-    <main>
+    <nav role=navigation>
+      <ol>
+        <li><a href=#introduction>Introduction</a></li>
+        <li><a href=#overview>Overview</a></li>
+        <li><a href=#artifact-metadata>Artifact Metadata</a></li>
+        <li><a href=#receipts>Receipts</a></li>
+        <li><a href=#servers>Servers</a></li>
+      </ol>
+    </nav>
+    <main role=main>
       <section id=files>
         <h2>Files</h2>
         <ul>
-          <li><a href=cli.txt>CLI usage</a></li>
-          <li><a href=swagger.yml>Swagger Specification</a></li>
-          <li><a href=schemas/receipt.json>Receipt JSON Schema</a></li>
-          <li><a href=schemas/artifact.json>Artifact Metadata JSON Schema</a></li>
         </ul>
       </section>
       <section>
         <h2 id=introduction>Introduction</h2>
         <p>The license vendor protocol defines data schemas, protocols, and a command-line interface for offering, buying, and managing software licenses.</p>
-        <p>Software developers who build software for other developers can use tools implementing the license vendor protocol to offer paid licenses for their work.</p>
-        <p>Software developers who rely on other developers’ work can use tools implementing the license vendor protocol to find out which artifacts they need licenses for, buy those licenses, and manage them over time.</p>
+        <p>Developers who build software for other developers can use tools implementing the license vendor protocol to offer paid licenses for their work.</p>
+        <p>Developers who rely on other developers’ work can use tools implementing the license vendor protocol to find out which artifacts they need licenses for, buy those licenses, and manage them over time.</p>
       </section>
       <section>
-        <h2 id=cycle>Cycle</h2>
+        <h2 id=overview>Overview</h2>
         <ol>
-          <li>A developer hosts a license vendor server, or uses one hosted by another, signs up, and configures it to sell license on their behalf.</li>
-          <li>The developer adds metadata about license availability to their project, ensuring that those data will be packaged in artifacts that users download.</li>
-          <li>Users who download the software run a program, such as a command-line tool, that reads the artifact's metadata and compares it against receipts for licenses the user already have.</li>
-          <li>Users can run the same program to buy the licenses they need and download receipts.</li>
+          <li><p>A developer hosts a license vendor server, or uses one hosted by another, signs up, and configures it to sell license on their behalf.</p></li>
+          <li><p>The developer adds metadata about license availability to their project, ensuring that those data will be packaged in artifacts that users download.</p></li>
+          <li><p>Users who download the software run a program, such as a command-line tool, that reads the artifact's metadata and compares it against receipts for licenses the user already have.</p></li>
+          <li><p>Users can run the same program to buy the licenses they need and download receipts.</p></li>
         </ol>
       </section>
       <section>
         <h2 id=artifact-metadata>Artifact Metadata</h2>
+        <a href=schemas/artifact.json>Artifact Metadata JSON Schema</a>
         <h3>npm</h3>
         <p>Place artifact metadata in <code>package.json</code> under the <code>licensevendor</code> key.</p>
         <h3>Cargo</h3>
         <p>Place artifact metadata in <code>Cargo.toml</code> under <code>[package.metadata.licensevendor]</code>.</p>
+      </section>
+      <section>
+        <h2 id=receipts>Receipts</h2>
+        <a href=schemas/receipt.json>Receipt JSON Schema</a>
+      </section>
+      <section>
+        <h2 id=servers>Servers</h2>
+        <a href=swagger.yml>Swagger Specification</a>
+      </section>
+      <section>
+        <h2 id=clients>Clients</h2>
+        <a href=cli.txt>Example CLI Usage</a>
       </section>
     </main>
   </body>
