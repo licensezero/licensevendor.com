@@ -21,7 +21,7 @@
     <main role=main>
       <section>
         <h2 id=introduction>Introduction</h2>
-        <p>The license vendor protocol defines data schemas, protocols, and a command-line interface for offering, buying, and managing software licenses.</p>
+        <p>The license vendor protocol defines data schemas, protocols, and a command-line interface for offering, vending, and managing software licenses.</p>
         <p>Developers who build software for other developers can use tools implementing the license vendor protocol to offer paid licenses for their work.</p>
         <p>Developers who rely on other developers’ work can use tools implementing the license vendor protocol to find out which artifacts they need licenses for, buy those licenses, and manage them over time.</p>
       </section>
@@ -44,14 +44,17 @@
       </section>
       <section>
         <h2 id=receipts>Receipts</h2>
+        <p>Receipts store data about licenses that software users have. Client applications use receipts to determine which licenses a user already has, and which licenses they still need.</p>
         <a href=schemas/receipt.json>Receipt JSON Schema</a>
       </section>
       <section>
         <h2 id=servers>Servers</h2>
+        <p>Servers handle users’s requests for licenses.</p>
         <a href=swagger.yml>Swagger Specification</a>
       </section>
       <section>
         <h2 id=clients>Clients</h2>
+        <p>Client applications analyze artifacts within software projects for license vendor metadata, determine which licenses users need, initiate transactions to get those license, and manages receipts for licenses received.</p>
         <a href=cli.txt>Example CLI Usage</a>
       </section>
     </main>
