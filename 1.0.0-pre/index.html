@@ -19,6 +19,21 @@
         </ul>
       </section>
       <section>
+        <h2 id=introduction>Introduction</h2>
+        <p>The license vendor protocol defines data schemas, protocols, and a command-line interface for offering, buying, and managing software licenses.</p>
+        <p>Software developers who build software for other developers can use tools implementing the license vendor protocol to offer paid licenses for their work.</p>
+        <p>Software developers who rely on other developers’ work can use tools implementing the license vendor protocol to find out which artifacts they need licenses for, buy those licenses, and manage them over time.</p>
+      </section>
+      <section>
+        <h2 id=cycle>Cycle</h2>
+        <ol>
+          <li>A developer hosts a license vendor server, or uses one hosted by another, signs up, and configures it to sell license on their behalf.</li>
+          <li>The developer adds metadata about license availability to their project, ensuring that those data will be packaged in artifacts that users download.</li>
+          <li>Users who download the software run a program, such as a command-line tool, that reads the artifact's metadata and compares it against receipts for licenses the user already have.</li>
+          <li>Users can run the same program to buy the licenses they need and download receipts.</li>
+        </ol>
+      </section>
+      <section>
         <h2 id=artifact-metadata>Artifact Metadata</h2>
         <h3>npm</h3>
         <p>Place artifact metadata in <code>package.json</code> under the <code>licensevendor</code> key.</p>
