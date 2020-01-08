@@ -1,5 +1,6 @@
 {
   "$id": "https://licensevendor.com/1.0.0-pre/schemas/jurisdiction.json",
+  "title": "ISO 3166-2 codes",
   "enum": [
     "AD-02",
     "AD-03",

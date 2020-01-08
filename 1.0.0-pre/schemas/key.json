@@ -1,6 +1,6 @@
 {
   "$id": "https://licensevendor.com/1.0.0-pre/schemas/key.json",
-  "title": "Ed25519 Public Key",
+  "title": "hex-encoded ed25519 public key",
   "type": "string",
   "pattern": "^[0-9a-f]{64}$"
 }

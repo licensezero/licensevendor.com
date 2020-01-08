@@ -1,5 +1,6 @@
 {
   "$id": "https://licensevendor.com/1.0.0-pre/schemas/price.json",
+  "title": "price",
   "type": "object",
   "required": [
     "amount",
