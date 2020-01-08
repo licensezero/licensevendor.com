@@ -175,9 +175,9 @@ paths:
         default:
           description: Unexpected Error
 
-  subscriptions/{uuid}:
+  orders/{uuid}:
     get:
-      summary: Returns the receipts for a subscription.
+      summary: Returns the receipts for an order.
       parameters:
         - name: uuid
           in: path
@@ -196,9 +196,9 @@ paths:
         default:
           description: Unexpected Error
 
-  subscriptions/{uuid}/latest:
+  orders/{uuid}/latest:
     get:
-      summary: Returns the latest receipt for a subscription.
+      summary: Returns the latest receipt for an order.
       parameters:
         - name: uuid
           in: path

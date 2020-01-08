@@ -3,10 +3,8 @@
   "key": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
   "signature": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
   "license": {
-    "meta": {
-      "api": "https://api.licensezero.com",
+    "values": {
       "effective": "2018-11-13T20:20:39Z",
-      "form": "https://forms.licensezero.com/private/1.0.0",
       "order": "2c743a84-09ce-4549-9f0d-19d8f53462bb",
       "licensee": {
         "email": "licensee@example.com",
@@ -24,12 +22,13 @@
         "currency": "USD"
       },
       "vendor": {
+        "server": "https://api.licensezero.com",
         "email": "support@artlessdevices.com",
         "name": "Artless Devices LLC",
         "jurisdiction": "US-CA",
-        "url": "https://artlessdevices.com"
+        "homepage": "https://artlessdevices.com"
       }
     },
-    "text": "Fake license text."
+    "form": "Fake license form."
   }
 }

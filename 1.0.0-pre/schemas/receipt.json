@@ -1,5 +1,7 @@
 {
   "$id": "https://licensevendor.com/1.0.0-pre/schemas/receipt.json",
+  "title": "license receipt",
+  "comment": "A receipt represents confirmation of the sale of a software license.",
   "type": "object",
   "required": [
     "schema",
@@ -13,53 +15,58 @@
       "const": "https://licensevendor.com/1.0.0-pre/schemas/receipt.json"
     },
     "key": {
+      "title": "public signing key of the license vendor",
       "$ref": "https://licensevendor.com/1.0.0-pre/schemas/key.json"
     },
     "signature": {
+      "title": "signature of the license vendor",
       "$ref": "https://licensevendor.com/1.0.0-pre/schemas/signature.json"
     },
     "license": {
+      "title": "license manifest",
       "type": "object",
       "required": [
-        "meta",
-        "text"
+        "values",
+        "form"
       ],
       "properties": {
-        "meta": {
+        "values": {
           "type": "object",
           "required": [
-            "api",
+            "order",
             "effective",
             "licensor",
-            "licensee"
+            "licensee",
+            "vendor"
           ],
           "additionalProperties": false,
           "properties": {
-            "api": {
-              "$ref": "https://licensevendor.com/1.0.0-pre/schemas/url.json"
-            },
-            "effective": {
-              "$ref": "https://licensevendor.com/1.0.0-pre/schemas/time.json"
-            },
-            "subscription": {
-              "const": true
-            },
-            "form": {
-              "$ref": "https://licensevendor.com/1.0.0-pre/schemas/url.json"
-            },
             "order": {
-              "title": "UUIDv4",
+              "title": "order identifier",
               "type": "string",
               "format": "uuid"
             },
+            "effective": {
+              "title": "effective date",
+              "$ref": "https://licensevendor.com/1.0.0-pre/schemas/time.json"
+            },
+            "price": {
+              "title": "purchase price",
+              "$ref": "https://licensevendor.com/1.0.0-pre/schemas/price.json"
+            },
+            "expires": {
+              "title": "expiration date of the license",
+              "$ref": "https://licensevendor.com/1.0.0-pre/schemas/time.json"
+            },
             "licensee": {
+              "title": "licensee",
+              "comment": "The licensee is the one receiving the license.",
               "type": "object",
               "required": [
                 "email",
                 "jurisdiction",
                 "name"
               ],
-              "additionalProperties": false,
               "properties": {
                 "email": {
                   "type": "string",
@@ -77,6 +84,8 @@
               }
             },
             "licensor": {
+              "title": "licensor",
+              "comment": "The licensor is the one giving the license.",
               "type": "object",
               "required": [
                 "email",
@@ -84,7 +93,6 @@
                 "name",
                 "id"
               ],
-              "additionalProperties": false,
               "properties": {
                 "email": {
                   "type": "string",
@@ -100,29 +108,29 @@
                   ]
                 },
                 "id": {
-                  "title": "UUIDv4",
+                  "title": "licensor identifier",
                   "type": "string",
                   "format": "uuid"
                 }
               }
             },
-            "price": {
-              "$ref": "https://licensevendor.com/1.0.0-pre/schemas/price.json"
-            },
-            "expires": {
-              "$ref": "https://licensevendor.com/1.0.0-pre/schemas/time.json"
-            },
             "vendor": {
-              "description": "information on the party that sold the license, such as an agent or reseller, if the licensor did not sell the license themself",
+              "title": "licesne vendor",
+              "comment": "information on the party that sold the license, such as an agent or reseller, if the licensor did not sell the license themself",
               "type": "object",
               "required": [
+                "server",
                 "email",
                 "name",
                 "jurisdiction",
-                "url"
+                "homepage"
               ],
               "additionalProperties": false,
               "properties": {
+                "server": {
+                  "title": "license vendor server",
+                  "$ref": "https://licensevendor.com/1.0.0-pre/schemas/url.json"
+                },
                 "email": {
                   "type": "string",
                   "format": "email"
@@ -136,15 +144,15 @@
                 "jurisdiction": {
                   "$ref": "https://licensevendor.com/1.0.0-pre/schemas/jurisdiction.json"
                 },
-                "url": {
+                "homepage": {
                   "$ref": "https://licensevendor.com/1.0.0-pre/schemas/url.json"
                 }
               }
             }
           }
         },
-        "text": {
-          "title": "license text",
+        "form": {
+          "title": "license form",
           "type": "string",
           "minLength": 1
         }
