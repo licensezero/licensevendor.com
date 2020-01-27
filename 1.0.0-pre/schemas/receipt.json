@@ -129,7 +129,7 @@
                 "email",
                 "name",
                 "jurisdiction",
-                "homepage"
+                "website"
               ],
               "additionalProperties": false,
               "properties": {
@@ -150,7 +150,7 @@
                 "jurisdiction": {
                   "$ref": "https://licensevendor.com/1.0.0-pre/schemas/jurisdiction.json"
                 },
-                "homepage": {
+                "website": {
                   "$ref": "https://licensevendor.com/1.0.0-pre/schemas/url.json"
                 }
               }
