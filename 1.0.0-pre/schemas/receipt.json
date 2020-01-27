@@ -33,6 +33,7 @@
         "values": {
           "type": "object",
           "required": [
+            "offer",
             "order",
             "effective",
             "licensor",
@@ -41,6 +42,11 @@
           ],
           "additionalProperties": false,
           "properties": {
+            "offer": {
+              "title": "offer identifier",
+              "type": "string",
+              "format": "uuid"
+            },
             "order": {
               "title": "order identifier",
               "type": "string",
@@ -119,7 +125,7 @@
               "comment": "information on the party that sold the license, such as an agent or reseller, if the licensor did not sell the license themself",
               "type": "object",
               "required": [
-                "server",
+                "api",
                 "email",
                 "name",
                 "jurisdiction",
@@ -127,8 +133,8 @@
               ],
               "additionalProperties": false,
               "properties": {
-                "server": {
-                  "title": "license vendor server",
+                "api": {
+                  "title": "license API",
                   "$ref": "https://licensevendor.com/1.0.0-pre/schemas/url.json"
                 },
                 "email": {

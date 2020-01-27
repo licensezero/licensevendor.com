@@ -4,6 +4,7 @@
   "signature": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
   "license": {
     "values": {
+      "offer": "9aab7058-599a-43db-9449-5fc0971ecbfa",
       "effective": "2018-11-13T20:20:39Z",
       "order": "2c743a84-09ce-4549-9f0d-19d8f53462bb",
       "licensee": {
@@ -22,7 +23,7 @@
         "currency": "USD"
       },
       "vendor": {
-        "server": "https://api.licensezero.com",
+        "api": "https://api.licensezero.com",
         "email": "support@artlessdevices.com",
         "name": "Artless Devices LLC",
         "jurisdiction": "US-CA",
