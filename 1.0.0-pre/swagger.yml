@@ -46,6 +46,8 @@ paths:
                         $ref: https://example.com/schemas/price.json
                       site:
                         $ref: https://example.com/schemas/price.json
+                      relicense:
+                        $ref: https://example.com/schemas/price.json
                     patternProperties:
                       ^\d+$:
                         $ref: https://example.com/schemas/price.json
